@@ -42,7 +42,7 @@ Once you made these edits, submit a slurm job.
 sbatch TestOOD_012425.sh
 ```
 
-This will generate a "slurm_xxxxx.out" file. See [example]. Follow the instructions in this file. Open a terminal in your own computer and type in the command:
+This will generate a "slurm_xxxxx.out" file. See [example](HOWTO_OOD/slurm-68618.out). Follow the instructions in this file. Open a terminal in your own computer and type in the command:
 ```
 ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
 ```
