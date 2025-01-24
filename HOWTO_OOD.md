@@ -10,7 +10,20 @@ use the following command (tested on OWL server)
 module load containers/apptainer/1.3.3
 ```
 
-Step 1. 
+## Step 1. Pull a docker image. 
+It is better to first create a folder for this and work within this folder.
+```
+mkdir testood
+cd testood
+apptainer pull docker://rsettlag/ood-rstudio-bio:4.1.2
+```
+The link "docker://rsettlag/ood-rstudio-bio:4.1.2" is from Bob Settlage's docker image.
+The souce code is located at this [github repository](https://github.com/rsettlage/ood-rstudio-basic/). 
+More specifically, this [docker file](https://github.com/rsettlage/ood-rstudio-basic/blob/master/Dockerfile.4.1.2), is what you see on one of the the OOD Rstudio.
+
+After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif8***
+
+## Step 2. Start a slurm job.
+Use this script.
 
 
-Step 2. 
