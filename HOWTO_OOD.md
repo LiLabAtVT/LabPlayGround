@@ -21,7 +21,7 @@ The link "docker://rsettlag/ood-rstudio-bio:4.1.2" is from Bob Settlage's docker
 The souce code is located at this [github repository](https://github.com/rsettlage/ood-rstudio-basic/). 
 More specifically, this [docker file](https://github.com/rsettlage/ood-rstudio-basic/blob/master/Dockerfile.4.1.2), is what you see on one of the the OOD Rstudio.
 
-After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif8***
+After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif***
 
 ## Step 2. Start a slurm job.
 Use this script.
