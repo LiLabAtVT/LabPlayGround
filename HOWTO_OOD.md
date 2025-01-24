@@ -21,7 +21,7 @@ The link "docker://rsettlag/ood-rstudio-bio:4.1.2" is from Bob Settlage's docker
 The souce code is located at this [github repository](https://github.com/rsettlage/ood-rstudio-basic/). 
 More specifically, this [docker file](https://github.com/rsettlage/ood-rstudio-basic/blob/master/Dockerfile.4.1.2), is what you see on one of the the OOD Rstudio.
 
-After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif***
+After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif*** in your folder.
 
 ## Step 2. Start a slurm job.
 Use this [script](HOWTO_OOD/TestOOD_012425.sh).
@@ -47,7 +47,7 @@ This will generate a "slurm_xxxxx.out" file. See [example](HOWTO_OOD/slurm-68618
 ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
 ```
 1. the owl002:41399 will change every time based on which worknode is allocatedto you.
-2. songli@LOGIN-HOST will be songli@owl2.arc.vt.edu. I typically set this as an environmental variable.
+2. songli@LOGIN-HOST will be songli@owl2.arc.vt.edu. I typically set this as an environmental variable. You should use your login information for this step. Use OWL2 or OWL3 is usually better because they are less crowded. 
 3. to further simplify the login process, you want to setup public key authentication to avoid using 2 factor.
 
 The next step is to open a browser and use http://localhost:8787 to connect the Rstudio.
@@ -70,7 +70,7 @@ apptainer pull docker://satijalab/seurat:5.0.0
 apptainer exec --bind=/work,/projects seurat_5.0.0.sif R
 
 ```
-This is **useful** if you are comfortable with running R script only. For example, to load Rachel's data which requires a large amount of memory, you can write a script this way and submit your job to execute your script as a typical SLURM job without he Rstudio interface. 
+This is **useful** if you are comfortable with running R script only. For example, to load Rachel's data which requires a large amount of memory, you can write a script and submit your job to execute your script as a typical SLURM job without he Rstudio interface. 
 
 6. Another alternative method is to use vxcode to connect to ARC and run R within this vscode session. I have not found any tutorial about this online.
    
