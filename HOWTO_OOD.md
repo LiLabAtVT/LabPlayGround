@@ -51,7 +51,26 @@ ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
 3. to further simplify the login process, you want to setup public key authentication to avoid using 2 factor.
    
 
+## Other information and future steps.
+1. these are based on Bob's work about 3 years ago. More examples can be found in his [github](https://github.com/rsettlage/ood-rstudio-basic/tree/master).
+2. as for now (01-24-2025), I cannot find a way to increase the number of CPUs to be used, we can only use 1 CPU. If I modify the #SBATCH header to increase CPU or cores or tasks, the OOD cannot open the Rstudio session. I can reach the point of entering the password, but after the password, there will be no response, and return an error message.
+3. there are other OOD or non-OOD docker you can pull. For example, you can pull the [Rocker](https://rocker-project.org/) images to run Rstudio server. This will run the latest R.  
+```
+apptainer  pull docker://rocker/rstudio:4.4.2
+```
+The problem is that we cannot install Seurat completely, because some dependency is needed to be installed separately.
 
+4. following point 3. next step could be to use Bob's 4.1.2.sif as a template, update that to the latest rocker image (4.4.2) and latest Seurat (5.0). **This is the most promising longer term solution.** 
 
+5. Alternatively, we can directly pull the Seurat 5.0 docker image. This one does not include Rstudio server, but we can run "Rscript" or "R".
+
+```
+apptainer pull docker://satijalab/seurat:5.0.0
+apptainer exec --bind=/work,/projects seurat_5.0.0.sif R
+
+```
+
+6. Another alternative method is to use vxcode to connect to ARC and run R within this vscode session. I have not found any tutorial about this online.
+   
 
 
