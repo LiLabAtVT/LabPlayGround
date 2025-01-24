@@ -1,0 +1,24 @@
+1. SSH tunnel from your workstation using the following command:
+
+   ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
+
+   and point your web browser to http://localhost:8787
+
+2. log in to RStudio Server using the following credentials:
+
+   user: songli
+   password: r4e1u2T24CWnxR06PpP2
+
+When done using RStudio Server, terminate the job by:
+
+1. Exit the RStudio Session ("power" button in the top right corner of the RStudio window)
+2. Issue the following command on the login node:
+
+      scancel -f 68618
+INFO:    Environment variable SINGULARITY_BIND is set, but APPTAINER_BIND is preferred
+INFO:    Environment variable SINGULARITYENV_RSTUDIO_SESSION_TIMEOUT is set, but APPTAINERENV_RSTUDIO_SESSION_TIMEOUT is preferred
+INFO:    Environment variable SINGULARITYENV_USER is set, but APPTAINERENV_USER is preferred
+INFO:    Environment variable SINGULARITYENV_PASSWORD is set, but APPTAINERENV_PASSWORD is preferred
+INFO:    gocryptfs not found, will not be able to use gocryptfs
+WARNING: group: unknown groupid 1837884
+slurmstepd: error: *** JOB 68618 ON owl002 CANCELLED AT 2025-01-24T09:18:24 ***
