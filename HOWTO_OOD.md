@@ -24,6 +24,34 @@ More specifically, this [docker file](https://github.com/rsettlage/ood-rstudio-b
 After the apptainer pull the docker image, you will find a file called ***ood-rstudio-bio_4.1.2.sif***
 
 ## Step 2. Start a slurm job.
-Use this script.
+Use this [script](HOWTO_OOD/TestOOD_012425.sh).
+
+You need to edit some part of the script first before use it.
+
+```
+line 8: 
+#SBATCH --account=nanoporedisease  <- use an account you have access to such as I2GDS
+
+line 73:
+cd /home/songli/TestOOD <- change this to the folder where you saved the OOD file.
+
+```
+
+Once you made these edits, submit a slurm job.
+```
+sbatch TestOOD_012425.sh
+```
+
+This will generate a "slurm_xxxxx.out" file. See [example]. Follow the instructions in this file. Open a terminal in your own computer and type in the command:
+```
+ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
+```
+1. the owl002:41399 will change every time based on which worknode is allocatedto you.
+2. songli@LOGIN-HOST will be songli@owl2.arc.vt.edu. I typically set this as an environmental variable.
+3. to further simplify the login process, you want to setup public key authentication to avoid using 2 factor.
+   
+
+
+
 
 
