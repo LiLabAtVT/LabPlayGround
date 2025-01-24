@@ -49,7 +49,8 @@ ssh -N -L 8787:owl002:41399 songli@LOGIN-HOST
 1. the owl002:41399 will change every time based on which worknode is allocatedto you.
 2. songli@LOGIN-HOST will be songli@owl2.arc.vt.edu. I typically set this as an environmental variable.
 3. to further simplify the login process, you want to setup public key authentication to avoid using 2 factor.
-   
+
+The next step is to open a browser and use http://localhost:8787 to connect the Rstudio.
 
 ## Other information and future steps.
 1. these are based on Bob's work about 3 years ago. More examples can be found in his [github](https://github.com/rsettlage/ood-rstudio-basic/tree/master).
