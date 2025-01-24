@@ -70,6 +70,7 @@ apptainer pull docker://satijalab/seurat:5.0.0
 apptainer exec --bind=/work,/projects seurat_5.0.0.sif R
 
 ```
+This is **useful** if you are comfortable with running R script only. For example, to load Rachel's data which requires a large amount of memory, you can write a script this way and submit your job to execute your script as a typical SLURM job without he Rstudio interface. 
 
 6. Another alternative method is to use vxcode to connect to ARC and run R within this vscode session. I have not found any tutorial about this online.
    
